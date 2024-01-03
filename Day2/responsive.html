@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.responsive-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.responsive-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.responsive-form input[type="text"], .responsive-form input[type="email"], .responsive-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.responsive-form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+
+@media (max-width: 600px) {
+  .responsive-form input[type="text"], .responsive-form input[type="email"], .responsive-form textarea {
+    font-size: 14px;
+    background-color: grey;
+  }
+}
+
+</style>
+</head>
+<body>
+ <form action="">
+    
+<form class="responsive-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+  
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+  
+    <input type="submit" value="Submit">
+  </form>
+  
+ </form>
+</body>
+</html>
