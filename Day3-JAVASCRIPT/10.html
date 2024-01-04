@@ -1,0 +1,38 @@
+<!-- 
+10.Sort the given string based on ASCII value.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var str=prompt("Enter a string")
+      let d=[]
+      let e=[]
+      for(i=0;i<str.length;i++)
+      {
+        let a = str.charCodeAt(i);
+        if(a>64 && a<91)
+        {
+            b=str[i]
+            d.push(b)
+        }
+        else
+        {
+            c=str[i]
+            e.push(c)
+        }
+      }
+      var x= b+c
+      document.write(d)
+      document.write(e)
+    
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+<!-- 
+3. Write a javascript program that returns `true` if the input string includes the string
+"ee".
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=prompt("Enter a String")
+        for (i=0;i<a.length;i++)
+        {
+            if(a[i]=='e' && a[i+1]=='e'){
+                document.write("The input string includes the string 'ee' at "+i+" and "+[i+1])
+                break
+            }
+            else if(a[i]=='E' && a[i+1]=='E'){
+                document.write("The input string includes the string 'ee' at "+i+" and "+[i+1])
+                break
+            }
+            else{
+                document.write("The input string does not includes the string 'ee'")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

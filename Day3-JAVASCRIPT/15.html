@@ -1,0 +1,65 @@
+<!-- 
+15.Create a basic calculator using HTML, CSS, and JavaScript with buttons for
+numbers and basic arithmetic operations.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">
+        Arithmetic Opretaions of Numbers!!
+    </h1>
+    <div>Click this button To get Multiplication of the Number
+        <button type="submit" onclick="multiply()">Multiplication</button>
+    </div>
+    <br>
+    <div>Click this button To get Division of the Number
+        <button type="submit" onclick="divide()">Division</button>
+    </div>
+    <br>
+    <div>Click this button To get Addition of the Number
+        <button type="submit" onclick="add()">Addition</button>
+    </div>
+    <br>
+    <div>Click this button To get Substraction of the Numbers
+        <button type="submit" onclick="sub()">Substraction</button>
+    </div>
+    <script>
+        function add(){
+            const a=parseInt(prompt("Enter a number"))
+            const b=parseInt(prompt("Enter a number"))
+            let g=a+b;
+            document.write(g)
+        }
+        function sub(){
+            const a=parseInt(prompt("Enter a number"))
+            const b=parseInt(prompt("Enter a number"))
+            const x=a-b;
+            const y=b-a;
+            if(x>0){
+                document.write(x)
+            }
+            else{
+                document.write(y)
+            }
+        }
+        function divide(){
+            const a=parseInt(prompt("Enter a number"))
+            const b=parseInt(prompt("Enter a number"))
+            const h=a/b;
+            document.write(h)
+        }
+        function multiply(){
+            const a=parseInt(prompt("Enter a number"))
+            const b=parseInt(prompt("Enter a number"))
+            const i=a*b;
+            document.write(i)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- 
+8. "Write a JavaScript function that takes a string and returns the count of vowels
+contained within it.
+Ex. User Input : Celebration ➙ 5"
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=prompt("Enter a string");
+        let b=0;
+        var c=a.toLowerCase()
+        for(i=0;i<a.length;i++){
+            if(c[i]=='a' || c[i]=='e' || c[i]=='i' || c[i]=='o' || c[i]=='u')
+            {
+                b++
+            }
+        }
+        if(b>=1){
+        document.write("Number of vowels in string are:"+b)
+        }
+        else{
+            document.write("String does not contains any vowels")
+        }
+    </script>
+</body>
+</html>
+
