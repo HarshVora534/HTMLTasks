@@ -1,0 +1,159 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="" id="file" accept=".txt" required>
+    <input type="submit">
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('file').addEventListener('change', function(event){
+            event.preventDefault();
+            var fr = new FileReader();
+
+            fr.onload = function() {
+                var fileContent = fr.result;
+                var result = findFirstRecurringItem(fileContent);
+                document.getElementById("output").textContent = JSON.stringify(result);
+            };
+
+            fr.readAsText(this.files[0]);
+        });
+
+        function findFirstRecurringItem(text) {
+            var charIndexMap = {};
+
+            function findRecurring(index, char) {
+                if (charIndexMap[char]) {
+                    return {[char]: [charIndexMap[char], index]};
+                }
+
+                charIndexMap[char] = index;
+
+                if (index < text.length - 1) {
+                    return findRecurring(index + 1, text[index + 1]);
+                }
+
+                return null;
+            }
+
+            return findRecurring(0, text[0]);
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Table Viewer</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .download-btn {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Table Viewer</h1>
+    <input type="file" id="csvInput" accept=".csv">
+    <button onclick="loadCSV()">Load CSV</button>
+
+    <table id="imageTable">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Links</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function loadCSV() {
+            const fileInput = document.getElementById('csvInput');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const csvContent = e.target.result;
+                    const lines = csvContent.split('\n');
+
+                    const tableBody = document.querySelector('#imageTable tbody');
+                    tableBody.innerHTML = '';
+
+                    lines.forEach((line, index) => {
+                        const columns = line.split(',');
+                        const imageUrl = columns[0].trim();
+
+                        if (imageUrl) {
+                            const row = tableBody.insertRow();
+                            const cell1 = row.insertCell(0);
+                            const cell2 = row.insertCell(1);
+
+                            const img = document.createElement('img');
+                            img.src = imageUrl;
+                            cell1.appendChild(img);
+
+                            const downloadBtn = document.createElement('button');
+                            downloadBtn.className = 'download-btn';
+                            downloadBtn.innerText = 'Download';
+                            downloadBtn.onclick = function () {
+                                downloadImage(imageUrl);
+                            };
+
+                            cell2.appendChild(downloadBtn);
+                        }
+                    });
+                };
+
+                reader.readAsText(file);
+            }
+        }
+
+        function downloadImage(url) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'image';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!-- 
+Create a local text file that contains words in it. Using JavaScript read the words
+from a text file and create a recursive function that identifies the very first item
+that has recurred in the word. It returns the identified item with the index where it
+first appeared and the very next index where it reappeared - entirely as an object.
+Ex.first word from file - “BTEJHBERSD” ➞ {“E”: [2, 6]}
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <input type="file" id="file" accept=".txt" required multiple>
+    <input type="submit">
+    <div id="abc"></div>
+    <script>
+         document.getElementById('file').addEventListener('change', function(event){
+            event.preventDefault();
+            var f=new FileReader();
+            f.onload=function()
+            {
+                document.getElementById("abc").textContent=f.result
+            }
+            f.readAsText(this.files[0])
+         })
+    </script>
+ </body>
+ </html>
+
+
+
+ 

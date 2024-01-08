@@ -1,0 +1,42 @@
+<!-- 
+Create a program which will display the time remaining from the current date to
+the entered date.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Remaining Calculator</title>
+</head>
+<body>
+
+<script>
+  function Remaining() {
+    const userInput = document.getElementById('userInput').value;
+    
+    const enteredDate = new Date(userInput);
+    if (isNaN(enteredDate.getTime())) {
+      alert('Enter date in the format YYYY-MM-DD');
+      return;
+    }
+
+    const currentDate = new Date();
+
+    const time = enteredDate - currentDate;
+
+    const days = Math.floor(time/(1000*60*60*24));
+    const hours = Math.floor((time % (1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((time % (1000*60*60))/(1000*60));
+    const seconds = Math.floor((time % (1000*60))/1000);
+
+    document.write(`Time remaining: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`);
+  }
+</script>
+
+<input type="date" id="userInput">
+<button onclick="Remaining()">Calculate Time Remaining</button>
+
+</body>
+</html>

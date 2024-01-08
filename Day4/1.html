@@ -1,0 +1,54 @@
+<!-- 
+Create a page with a single background image occupying the entire window.
+Over the image, there should be a 3X3 grid that fills the entire window. Each grid
+cell should have a circular opaque shape. No space between grid cells.
+When hovering the mouse cursor over the grid cell, it should change its opacity
+to 0.
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image:url("img.jpg") ;
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size:cover;
+            height: 400px;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            justify-items: center;
+            justify-content: space-between;
+        }
+        .abc
+        {
+            padding:10px 110px;
+            margin:8px;
+            opacity: 0.5;
+        }
+        .abc:hover{
+            opacity: 0;
+        }
+    </style>
+ </head>
+ <body align="center">
+    <div class="grid-container">
+        <div class="abc" style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc" style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+        <div class="abc"  style="height: 175px;width: 200px;border-radius: 50%;background-color: white;"></div>
+    </div>
+ </body>
+ </html>

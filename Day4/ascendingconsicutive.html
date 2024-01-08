@@ -1,0 +1,81 @@
+<!-- 
+Create a separate group for consecutive ascending numbers from the given
+string. ex: 1235689. Output : 123 56 89
+ -->
+ <!-- <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    Enter a number:<input type="number" value="number" id="number">
+    <br>
+    <button onclick="ac()">Submit</button>
+    <script>
+        function ac(){
+            const num=document.getElementById("number").value
+            var a=num.toString().length
+            const d=[]
+            let w=""
+            for(i=0;i<a-1;i++)
+            {
+                const x=(num[i])
+                const y=(num[i+1])
+                w=w+x
+                if(y.charCodeAt(0)-x.charCodeAt(0)!==1)
+                {
+                    d.push(w)
+                    w=""
+                }
+            }
+            w+=(num[a - 1]);
+            d.push(w)
+            return d
+        }
+        const g=num.toString().join(" ")
+        document.write(g)
+    </script>
+ </body>
+ </html>
+
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+<script>
+    function ac(str) {
+     const d = [];
+     let w = "";
+ 
+     for (let i = 0; i <str.length - 1; i++) {
+         const x = str[i];
+         const y = str[i + 1];
+ 
+         w += x;
+ 
+         if (y.charCodeAt(0) - x.charCodeAt(0) !== 1) {
+             d.push(w);
+             w = "";
+         }
+     }
+ 
+     w += str[str.length - 1];
+     d.push(w);
+ 
+     return d;
+    }
+ 
+    const str = "1235689";
+    const result = ac(str);
+    const x = result.join(" ");
+    console.log(x);
+</script>
+ </body>
+ </html>

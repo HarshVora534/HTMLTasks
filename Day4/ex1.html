@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            justify-items: center;
+            justify-content: space-between;
+            padding: 0px 100px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="file" accept=".csv" required>
+    <button>Load CSV</button>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Links</th>
+            <th>Download</th>
+        </tr>
+        <tr id="body"></tr>
+    </table>
+    <!-- <script>
+        function handleFile() {
+    const fileInput = document.getElementById('file');
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const csvData = e.target.result;
+            const imageData = parseCSV(csvData);
+
+            displayImages(imageData);
+        };
+
+        reader.readAsText(file);
+    }
+}
+    </script> -->
+</body>
+</html>
